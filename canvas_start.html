@@ -11,8 +11,6 @@
 	    border:5px solid #d3d3d3;
 	    background-color: #f1f1f1;
 	    display: block;
-        height: 80%;
-        width: 80%;
 	}
 </style>
 
@@ -23,6 +21,13 @@
     <input type = "color" id = "picker"/>
 </body>
 <script>
+    function resize(){
+        var canvas= document.getElementById("myCanvas");
+        canvas.height = window.innerHeight*.80;
+        canvas.width = window.innerWidth*.80;
+
+    } 
+    resize (); 
     var canvas= document.querySelector("#myCanvas")
     var ctx = canvas.getContext("2d");
     ctx.fillStyle = 'blue';
@@ -32,7 +37,7 @@
         ctx.arc(posX, posY, 10, 0, 2 * Math.PI);
         ctx.fill();
         }
-
+    
     myCanvas.addEventListener(
         'mousemove', function (e) {
             console.log(e.x,e.y);
