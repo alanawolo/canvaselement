@@ -31,7 +31,9 @@
     var canvas= document.querySelector("#myCanvas")
     var ctx = canvas.getContext("2d");
     ctx.fillStyle = 'blue';
-
+    
+    draw();
+    
     function draw(posX, posY){
         ctx.beginPath();
         ctx.arc(posX, posY, 10, 0, 2 * Math.PI);
